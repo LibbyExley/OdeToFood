@@ -18,6 +18,8 @@ namespace OdeToFood
         public string Message { get; set; }
         public IEnumerable<Restaurant> Restuarants { get; set; }
 
+        [BindProperty]
+        public string SearchTerm { get; set; }
         public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
             this.config = config;
@@ -27,7 +29,7 @@ namespace OdeToFood
         public void OnGet()
         {
             Message = config["Message"];
-            Restuarants = restaurantData.GetAll();
+            Restuarants = restaurantData.GetRestaurantsByName(SearchTerm);
         }
     }
 }

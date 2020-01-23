@@ -6,6 +6,15 @@
 
 <h1>Restaurants</h1>
 
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+           <input type="text" name="searchTerm"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+
 <table class="table">
     @foreach(var restaurant in Model.Restuarants)
     {
